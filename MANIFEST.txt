@@ -1,0 +1,8 @@
+Chapter Summariser for KOReader
+Version: 1.1.5
+Plugin directory: chapter_summariser.koplugin
+Plugin files: _meta.lua, main.lua, gemini_client.lua
+Documentation and license: README.md, CHANGELOG.md, COMPATIBILITY.md, LICENSE
+Target: KOReader 2026.07.1; EPUB books
+AI model: gemini-3.5-flash-lite
+License: AGPL-3.0 (GNU Affero General Public License v3.0)
