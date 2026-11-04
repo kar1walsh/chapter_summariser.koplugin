@@ -1,5 +1,5 @@
 Chapter Summariser for KOReader
-Version: 1.1.5
+Version: 2.0.0
 Plugin directory: chapter_summariser.koplugin
 Plugin files: _meta.lua, main.lua, gemini_client.lua
 Documentation and license: README.md, CHANGELOG.md, COMPATIBILITY.md, LICENSE

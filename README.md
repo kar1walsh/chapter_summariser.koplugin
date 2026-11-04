@@ -2,25 +2,27 @@
 
 An EPUB-focused KOReader plugin for readers who want to revisit chapters, keep track of a novel's story, and refresh their memory without leaving the book.
 
-**Current version:** 1.1.5  
+**Current version:** 2.0.0 (stable release)  
 **AI model:** Google Gemini 3.5 Flash-Lite (`gemini-3.5-flash-lite`)  
 **Document format:** EPUB
 
 ## Features
 
-- **Summarise A Chapter** — choose a chapter and generate a saved chapter recap. If a recap already exists, you can view it or generate it again.
+- **Summarise A Chapter** — choose a chapter and generate a saved chapter recap. If a recap already exists, you can view it or generate it again. The chapter picker identifies and marks your current chapter.
+- **Summarise Previous Chapter** — use the main-menu shortcut or assignable gesture to open the immediately preceding story chapter. A valid saved recap opens directly; if none exists, the plugin generates and saves one using the existing spoiler-safe memory-aware workflow. If you are in the first chapter, the plugin explains that there is no previous chapter.
 - **Book Memory** — build chronological story memory as chapters are processed. The plugin works through missing earlier chapters in order rather than giving a summary of an earlier chapter access to later chapters.
 - **Brief Chapter Summary** — open the brief chapter summaries held in Book Memory.
 - **Chapter Progress List** — review chapter progress and which chapter summaries have been generated.
 - **This Chapter So Far** — generate a temporary recap of the current chapter up to the current reading position. This result is not saved and does not update Book Memory or Chapter Progress.
-- **Gesture shortcuts** — assign the chapter picker, Brief Chapter Summary, and This Chapter So Far actions to KOReader gestures.
+- **Settings** — store the Gemini API key and choose the length for detailed chapter recaps: Short (125–175 words), Standard (250–300 words), or Extended (400–450 words). Standard is the default.
+- **Gesture shortcuts** — assign the chapter picker, Summarise Previous Chapter, Brief Chapter Summary, and This Chapter So Far actions to KOReader gestures.
 
 The chapter picker uses `[Recap]` for chapters with a saved full recap and `[Memory]` for chapters with Book Memory. Chapters without either remain unlabelled.
 
 ## Compatibility
 
 - Designed for KOReader and EPUB books.
-- Version **1.1.5** has been tested and confirmed working by the maintainer on **KOReader 2026.07.1** running on a **Kindle Paperwhite 4**, including the updated gesture label and the plugin features.
+- Version **2.0.0** has been tested by the maintainer on **KOReader 2026.07.01** running on a **Kindle Paperwhite 4**. Testing included the current-chapter indicator, previous-chapter shortcut and gesture, Settings and saved summary-length preference, and recap generation at all three lengths across different books. The release also strengthens source-grounded recap instructions and long-chapter consolidation. Other devices and KOReader versions have not been independently verified.
 - Other devices and KOReader versions have not yet been independently verified. Device-specific network and reading-position behaviour may differ.
 
 ## Installation
@@ -43,9 +45,11 @@ The project is intended to be discoverable by KOReader community plugin managers
 ## Setup: Gemini API key
 
 1. Create an API key using [Google AI Studio](https://aistudio.google.com/app/apikey).
-2. In KOReader, open **Tools → Chapter Summariser → API Key**.
+2. In KOReader, open **Tools → Chapter Summariser → Settings → API Key (Gemini)**.
 3. Paste and save your key.
 4. Generate a recap when ready.
+
+In **Settings → Detailed Summary Length**, choose Short (125–175 words), Standard (250–300 words), or Extended (400–450 words). Standard is selected by default. Each option has a deliberately separated target and level of detail: Short aims for about 150 words and includes only the essential story events; Standard aims for about 275 words and gives a balanced account of the main sequence; Extended aims for about 425 words and provides a fuller chronological retelling with more context, significant conversations, clues, and secondary developments. Targets are approximate rather than absolute; a chapter with too little narrative should receive a shorter faithful recap rather than invented or padded content. The preference affects detailed chapter recaps only; Book Memory notes, Brief Chapter Summary, and This Chapter So Far keep their existing lengths.
 
 The plugin uses the fixed model ID `gemini-3.5-flash-lite`. The maintainer selected Flash-Lite after testing because it gave more reliable results for this plugin's chapter summaries. The model is not user-selectable in the interface.
 
