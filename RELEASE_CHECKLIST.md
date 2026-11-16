@@ -1,15 +1,23 @@
-# Public release checklist — v1.1.5
+# Release checklist
 
-The v1.1.5 device test is complete. The remaining items concern public repository setup and distribution; this checklist does not imply acceptance by any catalogue.
+Use this for every release. Copy it into the release pull request and tick it off.
 
-- [x] Test v1.1.5 on the maintainer's Kindle Paperwhite 4 with KOReader 2026.07.1.
-- [x] Test the chapter picker, saved-summary menu, Book Memory menu, gestures, and This Chapter So Far behaviour.
-- [x] Include the complete AGPL-3.0 text in `LICENSE`.
-- [ ] Create a public GitHub repository named `chapter_summariser.koplugin`.
-- [ ] Upload the contents of this folder at the repository root (not an extra nested folder).
-- [ ] Add the GitHub topic `koreader-plugin`.
-- [ ] Create a GitHub Release tagged `v1.1.5` and attach a manual-install ZIP containing the `chapter_summariser.koplugin/` folder.
-- [ ] Confirm the AppStore can discover the repository and validates `_meta.lua`.
-- [ ] Verify Storefront discovery separately; do not assume the two catalogues index repositories in the same way.
-- [ ] Submit a submodule pull request to `koreader/contrib` if desired, following that repository's current contribution instructions.
-- [ ] Publish the Reddit announcement when the repository, release ZIP, privacy notice, and screenshots are ready.
+## Status: v2.0.0 (stable)
+
+- [x] Tested on a Kindle Paperwhite 4 with KOReader 2026.07.1.
+- [x] Full AGPL-3.0 text in `LICENSE`.
+- [x] Public GitHub repository with contents at the repository root.
+- [x] GitHub topic `koreader-plugin` added.
+- [x] GitHub Release `v2.0.0` published with `Chapter_Summariser_v2.0.0_Manual_Install.zip`.
+- [x] Privacy and data-handling section in the README.
+- [ ] Optional: submit to `koreader/contrib` following that repository's current instructions.
+- [ ] Optional: announcement post once there are screenshots.
+
+## For each new release
+
+- [ ] Update the version in `_meta.lua` **and** `main.lua` (`version = ...`). They must match.
+- [ ] Update `MANIFEST.txt`, `CHANGELOG.md`, `COMPATIBILITY.md` and the README version line.
+- [ ] Test on a device and record the device and KOReader version in `COMPATIBILITY.md`.
+- [ ] Build the install zip. It must contain a single `chapter_summariser.koplugin/` folder holding `_meta.lua`, `main.lua`, `gemini_client.lua`, and the docs.
+- [ ] Tag `vX.Y.Z` on `main` and create a GitHub Release with the zip attached.
+- [ ] Check the Release page shows the correct zip, then check the plugin appears in the KOReader storefront.

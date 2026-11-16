@@ -23,7 +23,7 @@ The chapter picker uses `[Recap]` for chapters with a saved full recap and `[Mem
 
 - Designed for KOReader and EPUB books.
 - Version **2.0.0** has been tested by the maintainer on **KOReader 2026.07.01** running on a **Kindle Paperwhite 4**. Testing included the current-chapter indicator, previous-chapter shortcut and gesture, Settings and saved summary-length preference, and recap generation at all three lengths across different books. The release also strengthens source-grounded recap instructions and long-chapter consolidation. Other devices and KOReader versions have not been independently verified.
-- Other devices and KOReader versions have not yet been independently verified. Device-specific network and reading-position behaviour may differ.
+- Device-specific network and reading-position behaviour may differ. Reports from other Kindle models, Kobo and other devices are welcome; see Reporting issues below.
 
 ## Installation
 
